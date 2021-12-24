@@ -36,6 +36,7 @@ dnf install -y \
     gcc-c++ \
     gdb \
     git-lfs \
+    graphviz \
     glslc \
     gtk3 \
     gtk3-devel \
