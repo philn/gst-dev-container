@@ -17,116 +17,131 @@ dnf copr enable -y philn/wpewebkit
 
 # install rest of the extra deps
 dnf install -y \
+    SDL2 \
+    SDL2-devel \
     aalib-devel \
     aom \
     bat \
+    ccache \
+    clang-devel \
+    cmake \
+    elfutils \
+    elfutils-devel \
+    elfutils-libs \
+    faac-devel \
+    ffmpeg \
+    ffmpeg-devel \
+    ffmpeg-libs \
+    flex \
+    flite \
+    flite-devel \
+    gcc \
+    gcc-c++ \
+    gdb \
+    git-lfs \
+    glslc \
+    graphene \
+    graphene-devel \
+    gsl \
+    gsl-devel \
+    gssdp \
+    gssdp-devel \
+    gtest \
+    gtest-devel \
+    gtk3 \
+    gtk3-devel \
+    gtk4-devel \
+    gupnp \
+    gupnp-devel \
+    gupnp-igd \
+    gupnp-igd-devel \
     intel-mediasdk-devel \
+    json-glib \
+    json-glib-devel \
     libaom \
     libaom-devel \
     libcaca-devel \
     libdav1d \
     libdav1d-devel \
-    ccache \
-    cmake \
-    clang-devel \
-    elfutils \
-    elfutils-libs \
-    elfutils-devel \
-    gcc \
-    gcc-c++ \
-    gdb \
-    git-lfs \
-    graphviz \
-    glslc \
-    gtk3 \
-    gtk3-devel \
-    gtest \
-    gtest-devel \
-    graphene \
-    graphene-devel \
-    gsl \
-    gsl-devel \
-    gupnp \
-    gupnp-devel \
-    gupnp-igd \
-    gupnp-igd-devel \
-    gssdp \
-    gssdp-devel \
-    faac-devel \
-    ffmpeg \
-    ffmpeg-libs \
-    ffmpeg-devel \
-    flex \
-    flite \
-    flite-devel \
-    mono-devel \
-    procps-ng \
-    patch \
-    qt5-qtbase-devel \
-    qt5-qtx11extras-devel \
-    qt5-qtwayland-devel \
-    redhat-rpm-config \
-    json-glib \
-    json-glib-devel \
     libnice \
     libnice-devel \
     libsodium-devel \
     libunwind \
     libunwind-devel \
     libva-devel \
-    libyaml-devel \
     libxml2-devel \
     libxslt-devel \
+    libyaml-devel \
     llvm-devel \
     log4c-devel \
     make \
+    mesa-dri-drivers \
+    mesa-libGL \
+    mesa-libGL-devel \
+    mesa-libGLES \
+    mesa-libGLES-devel \
+    mesa-libGLU \
+    mesa-libGLU-devel \
+    mesa-libOSMesa \
+    mesa-libOSMesa-devel \
+    mesa-libOpenCL \
+    mesa-libOpenCL-devel \
+    mesa-libd3d \
+    mesa-libd3d-devel \
+    mesa-libgbm \
+    mesa-libgbm-devel \
+    mesa-omx-drivers \
+    mesa-vulkan-drivers \
+    mono-devel \
     nasm \
     neon \
     neon-devel \
-    nunit \
     npm \
+    nunit \
     opencv \
     opencv-devel \
     openjpeg2 \
     openjpeg2-devel \
-    SDL2 \
-    SDL2-devel \
-    sbc \
-    sbc-devel \
-    x264 \
-    x264-libs \
-    x264-devel \
+    patch \
+    pipewire-devel \
+    procps-ng \
     python3 \
-    python3-devel \
-    python3-libs \
-    python3-wheel \
-    python3-gobject \
     python3-cairo \
     python3-cairo-devel \
+    python3-devel \
+    python3-gobject \
+    python3-libs \
+    python3-wheel \
+    qt5-qtbase-devel \
+    qt5-qtwayland-devel \
+    qt5-qtx11extras-devel \
+    redhat-rpm-config \
+    sbc \
+    sbc-devel \
     valgrind \
     vulkan \
     vulkan-devel \
-    mesa-dri-drivers \
-    mesa-omx-drivers \
-    mesa-libGL \
-    mesa-libGL-devel \
-    mesa-libGLU \
-    mesa-libGLU-devel \
-    mesa-libGLES \
-    mesa-libGLES-devel \
-    mesa-libOpenCL \
-    mesa-libOpenCL-devel \
-    mesa-libgbm \
-    mesa-libgbm-devel \
-    mesa-libd3d \
-    mesa-libd3d-devel \
-    mesa-libOSMesa \
-    mesa-libOSMesa-devel \
-    mesa-vulkan-drivers \
+    wayland-protocols-devel \
+    wpebackend-fdo-devel \
     wpewebkit \
     wpewebkit-devel \
-    wpebackend-fdo-devel \
+    x264 \
+    x264-devel \
+    x264-libs \
     xorg-x11-server-Xvfb
+
+# Extra tools
+dnf install -y \
+    apitrace \
+    apitrace-gui \
+    direnv \
+    fish \
+    graphviz \
+    indent \
+    perf \
+    sysprof \
+    tmux \
+    wget
 
 # Install common debug symbols
 dnf debuginfo-install -y gtk3 \
@@ -191,7 +206,7 @@ dnf debuginfo-install -y gtk3 \
     zlib
 
 # Install the dependencies of gstreamer
-dnf builddep -y gstreamer1 \
+dnf builddep -y --allowerasing --skip-broken gstreamer1 \
     gstreamer1-plugins-base \
     gstreamer1-plugins-good \
     gstreamer1-plugins-good-extras \
@@ -206,7 +221,7 @@ dnf builddep -y gstreamer1 \
     python3-gstreamer1
 
 dnf remove -y meson
-pip3 install meson==0.59.2 hotdoc python-gitlab
+pip3 install meson hotdoc python-gitlab
 
 # Remove gst-devel packages installed by builddep above
 dnf remove -y "gstreamer1*devel"
@@ -222,7 +237,7 @@ rm -f *.rpm
 
 # Install Rust
 RUSTUP_VERSION=1.24.3
-RUST_VERSION=1.55.0
+RUST_VERSION=1.58.1
 RUST_ARCH="x86_64-unknown-linux-gnu"
 
 dnf install -y wget
