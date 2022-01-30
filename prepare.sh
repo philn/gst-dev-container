@@ -13,6 +13,7 @@ sudo dnf install -y \
 
 dnf upgrade -y
 
+dnf copr enable -y philn/ccls
 dnf copr enable -y philn/wpewebkit
 
 # install rest of the extra deps
@@ -134,6 +135,7 @@ dnf install -y \
 dnf install -y \
     apitrace \
     apitrace-gui \
+    ccls \
     direnv \
     fish \
     graphviz \
