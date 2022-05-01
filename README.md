@@ -3,7 +3,7 @@
 As this image has been pushed to my dockerhub, you can download it:
 
 ```sh
-$ toolbox create -c gst-dev --image docker.io/philn2/gst-dev:latest
+$ toolbox create -c gst-dev-f36 --image docker.io/philn2/gst-dev:f36
 ```
 
 # Local build
@@ -11,6 +11,6 @@ $ toolbox create -c gst-dev --image docker.io/philn2/gst-dev:latest
 If you prefer to build it yourself:
 
 ```sh
-$ podman build -t gst-dev:latest .
-$ toolbox create -c gst-dev --image localhost/gst-dev:latest
+$ podman build -t gst-dev:f36 .
+$ toolbox create -c gst-dev-f36 --image localhost/gst-dev:f36
 ```

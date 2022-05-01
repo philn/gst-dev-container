@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora:35
+FROM registry.fedoraproject.org/fedora:36
 
-ENV NAME=gst-dev VERSION=35
+ENV NAME=gst-dev VERSION=36
 
 ENV SHELL /bin/bash
 ENV LANG C.UTF-8
