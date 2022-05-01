@@ -116,6 +116,9 @@ dnf install -y \
     qt5-qtbase-devel \
     qt5-qtwayland-devel \
     qt5-qtx11extras-devel \
+    qt5-qtquickcontrols \
+    qt5-qtquickcontrols2 \
+    qt5-qtbase-private-devel \
     redhat-rpm-config \
     sbc \
     sbc-devel \
@@ -129,6 +132,7 @@ dnf install -y \
     x264 \
     x264-devel \
     x264-libs \
+    xmlstarlet \
     xorg-x11-server-Xvfb
 
 # Extra tools
@@ -141,6 +145,8 @@ dnf install -y \
     graphviz \
     indent \
     perf \
+    rr \
+    strace \
     sysprof \
     tmux \
     wget
@@ -239,7 +245,7 @@ rm -f *.rpm
 
 # Install Rust
 RUSTUP_VERSION=1.24.3
-RUST_VERSION=1.58.1
+RUST_VERSION=1.60.0
 RUST_ARCH="x86_64-unknown-linux-gnu"
 
 dnf install -y wget
