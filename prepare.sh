@@ -49,6 +49,7 @@ dnf install -y \
     gssdp-devel \
     gtest \
     gtest-devel \
+    gtk-doc \
     gtk3 \
     gtk3-devel \
     gtk4-devel \
@@ -61,6 +62,7 @@ dnf install -y \
     json-glib-devel \
     libaom \
     libaom-devel \
+    libasan \
     libcaca-devel \
     libdav1d \
     libdav1d-devel \
@@ -197,6 +199,7 @@ dnf debuginfo-install -y gtk3 \
     pulseaudio-libs-glib2 \
     wavpack \
     webrtc-audio-processing \
+    wpewebkit \
     ffmpeg \
     ffmpeg-libs \
     faad2-libs \
