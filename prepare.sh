@@ -13,7 +13,6 @@ sudo dnf install -y \
 
 dnf upgrade -y
 
-dnf copr enable -y philn/ccls
 dnf copr enable -y philn/wpewebkit
 
 # install rest of the extra deps
@@ -141,7 +140,6 @@ dnf install -y \
 dnf install -y \
     apitrace \
     apitrace-gui \
-    ccls \
     direnv \
     fish \
     graphviz \
@@ -247,8 +245,8 @@ rpm -i --reinstall *.rpm
 rm -f *.rpm
 
 # Install Rust
-RUSTUP_VERSION=1.24.3
-RUST_VERSION=1.60.0
+RUSTUP_VERSION=1.25.1
+RUST_VERSION=1.65.0
 RUST_ARCH="x86_64-unknown-linux-gnu"
 
 dnf install -y wget
