@@ -230,7 +230,7 @@ dnf builddep -y --allowerasing --skip-broken gstreamer1 \
     python3-gstreamer1
 
 dnf remove -y meson
-pip3 install meson hotdoc python-gitlab
+pip3 install meson
 
 # Remove gst-devel packages installed by builddep above
 dnf remove -y "gstreamer1*devel"
