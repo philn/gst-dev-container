@@ -136,6 +136,13 @@ dnf install -y \
     xmlstarlet \
     xorg-x11-server-Xvfb
 
+# VAAPI mess:
+dnf -y remove mesa-va-drivers
+dnf -y install mesa-va-drivers-freeworld
+
+# ffmpeg mess:
+dnf -y install libavcodec-freeworld
+
 # Extra tools
 dnf install -y \
     apitrace \
