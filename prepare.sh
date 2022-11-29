@@ -158,69 +158,6 @@ dnf install -y \
     tmux \
     wget
 
-# Install common debug symbols
-dnf debuginfo-install -y gtk3 \
-    glib2 \
-    glibc \
-    gupnp \
-    gupnp-igd \
-    gssdp \
-    freetype \
-    openjpeg \
-    gobject-introspection \
-    python3 \
-    python3-libs \
-    python3-gobject \
-    libappstream-glib-devel \
-    libjpeg-turbo \
-    glib-networking \
-    libcurl \
-    libsoup \
-    nss \
-    nss-softokn \
-    nss-softokn-freebl \
-    nss-sysinit \
-    nss-util \
-    openssl \
-    openssl-libs \
-    openssl-pkcs11 \
-    brotli \
-    bzip2-libs \
-    gpm-libs \
-    harfbuzz \
-    harfbuzz-icu \
-    json-c \
-    json-glib \
-    libbabeltrace \
-    libffi \
-    libsrtp \
-    libunwind \
-    mpg123-libs \
-    neon \
-    orc-compiler \
-    orc \
-    pixman \
-    pulseaudio-libs \
-    pulseaudio-libs-glib2 \
-    wavpack \
-    webrtc-audio-processing \
-    wpewebkit \
-    ffmpeg \
-    ffmpeg-libs \
-    faad2-libs \
-    libavdevice \
-    libmpeg2 \
-    faac \
-    fdk-aac \
-    x264 \
-    x264-libs \
-    x265 \
-    x265-libs \
-    xz \
-    xz-libs \
-    zip \
-    zlib
-
 # Install the dependencies of gstreamer
 dnf builddep -y --allowerasing --skip-broken gstreamer1 \
     gstreamer1-plugins-base \
