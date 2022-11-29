@@ -58,6 +58,7 @@ libsodium-devel
 libunwind
 libunwind-devel
 libva-devel
+libva-intel-driver
 libxml2-devel
 libxslt-devel
 libyaml-devel
