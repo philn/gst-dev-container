@@ -15,6 +15,7 @@ elfutils-libs
 faac-devel
 ffmpeg
 ffmpeg-devel
+ffmpeg-free
 ffmpeg-libs
 fish
 flex
