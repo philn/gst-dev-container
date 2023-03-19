@@ -13,10 +13,7 @@ elfutils
 elfutils-devel
 elfutils-libs
 faac-devel
-ffmpeg
-ffmpeg-devel
 ffmpeg-free
-ffmpeg-libs
 fish
 flex
 flite
@@ -50,6 +47,7 @@ json-glib-devel
 libaom
 libaom-devel
 libasan
+libavcodec-freeworld
 libcaca-devel
 libdav1d
 libdav1d-devel
@@ -126,7 +124,6 @@ wget
 wpebackend-fdo-devel
 wpewebkit
 wpewebkit-devel
-x264
 x264-devel
 x264-libs
 xmlstarlet

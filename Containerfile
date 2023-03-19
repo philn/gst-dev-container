@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora:37
+FROM registry.fedoraproject.org/fedora:38
 
-ENV NAME=gst-dev VERSION=37
+ENV NAME=gst-dev VERSION=38
 
 ENV SHELL /bin/bash
 ENV LANG C.UTF-8
@@ -39,9 +39,6 @@ RUN dnf -y install $(cat packages | xargs)
 # VAAPI mess:
 RUN dnf -y remove mesa-va-drivers
 RUN dnf -y install mesa-va-drivers-freeworld
-
-# ffmpeg mess:
-RUN dnf -y install libavcodec-freeworld
 
 # Install the dependencies of gstreamer
 RUN dnf builddep -y --allowerasing --skip-broken gstreamer1 \
