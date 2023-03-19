@@ -8,6 +8,8 @@ bat
 ccache
 clang-devel
 cmake
+cpulimit
+desktop-file-utils
 direnv
 elfutils
 elfutils-devel
@@ -23,6 +25,7 @@ gcc-c++
 gdb
 git-lfs
 glslc
+gpac
 graphene
 graphene-devel
 graphviz
@@ -36,6 +39,7 @@ gtk-doc
 gtk3
 gtk3-devel
 gtk4-devel
+gtk4-devel-tools
 gupnp
 gupnp-devel
 gupnp-igd
@@ -44,6 +48,7 @@ indent
 intel-mediasdk-devel
 json-glib
 json-glib-devel
+libadwaita-devel
 libaom
 libaom-devel
 libasan
@@ -58,12 +63,14 @@ libunwind
 libunwind-devel
 libva-devel
 libva-intel-driver
+libva-utils
 libxml2-devel
 libxslt-devel
 libyaml-devel
 llvm-devel
 log4c-devel
 make
+massif-visualizer
 mesa-dri-drivers
 mesa-libGL
 mesa-libGL-devel
@@ -114,7 +121,6 @@ sbc
 sbc-devel
 strace
 sysprof
-tmux
 toolbox-experience
 valgrind
 vulkan
