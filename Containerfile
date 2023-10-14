@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora:38
+FROM registry.fedoraproject.org/fedora:39
 
-ENV NAME=gst-dev VERSION=38
+ENV NAME=gst-dev VERSION=39
 
 ENV SHELL /bin/bash
 ENV LANG C.UTF-8
@@ -71,8 +71,8 @@ RUN rpm -i --reinstall *.rpm
 RUN rm -f *.rpm
 
 # Install Rust
-ENV RUSTUP_VERSION=1.25.1
-ENV RUST_VERSION=1.68.0
+ENV RUSTUP_VERSION=1.26.0
+ENV RUST_VERSION=1.73.0
 ENV RUST_ARCH="x86_64-unknown-linux-gnu"
 ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST_ARCH/rustup-init
 RUN wget $RUSTUP_URL
