@@ -9,6 +9,7 @@ ccache
 clang-devel
 cmake
 cpulimit
+default-fonts-core-emoji
 desktop-file-utils
 direnv
 elfutils
@@ -17,6 +18,7 @@ elfutils-libs
 faac-devel
 ffmpeg-free
 fish
+flatpak
 flex
 flite
 flite-devel
@@ -44,6 +46,7 @@ gupnp
 gupnp-devel
 gupnp-igd
 gupnp-igd-devel
+heaptrack
 indent
 intel-mediasdk-devel
 json-glib
@@ -89,6 +92,7 @@ mesa-libgbm
 mesa-libgbm-devel
 mesa-omx-drivers
 mesa-vulkan-drivers
+mold
 mono-devel
 nasm
 neon
@@ -133,5 +137,6 @@ wpewebkit
 wpewebkit-devel
 x264-devel
 x264-libs
+xdg-utils
 xmlstarlet
 xorg-x11-server-Xvfb
