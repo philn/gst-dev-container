@@ -123,7 +123,6 @@ sbc
 sbc-devel
 strace
 sysprof
-toolbox-experience
 valgrind
 vulkan
 vulkan-devel

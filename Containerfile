@@ -1,16 +1,6 @@
-FROM registry.fedoraproject.org/fedora:39
+FROM registry.fedoraproject.org/fedora-toolbox:40
 
-ENV NAME=gst-dev VERSION=39
-
-ENV SHELL /bin/bash
-ENV LANG C.UTF-8
-LABEL com.github.containers.toolbox="true" \
-      com.github.debarshiray.toolbox="true" \
-      com.redhat.component="$NAME" \
-      name="$NAME" \
-      version="$VERSION" \
-      usage="This image is meant to be used with the toolbox command" \
-      summary="Base image for creating Fedora toolbox containers"
+ENV NAME=gst-dev VERSION=40
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
@@ -71,8 +61,8 @@ RUN rpm -i --reinstall *.rpm
 RUN rm -f *.rpm
 
 # Install Rust
-ENV RUSTUP_VERSION=1.26.0
-ENV RUST_VERSION=1.73.0
+ENV RUSTUP_VERSION=1.27.0
+ENV RUST_VERSION=1.76.0
 ENV RUST_ARCH="x86_64-unknown-linux-gnu"
 ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST_ARCH/rustup-init
 RUN wget $RUSTUP_URL
@@ -87,5 +77,4 @@ RUN cargo --version
 RUN rustc --version
 
 RUN dnf clean all
-RUN rm -R /root/*
 RUN rm -rf /var/cache/dnf /var/log/dnf*
