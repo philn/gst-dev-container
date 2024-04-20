@@ -41,9 +41,8 @@ RUN dnf builddep -y --allowerasing --skip-broken gstreamer1 \
     gstreamer1-plugins-bad-free-extras \
     gstreamer1-plugins-bad-freeworld \
     gstreamer1-libav \
-    gstreamer1-rtsp-server  \
-    gstreamer1-vaapi \
-    python3-gstreamer1
+    gstreamer1-rtsp-server
+
 
 RUN dnf remove -y meson
 RUN pip3 install meson
