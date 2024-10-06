@@ -59,6 +59,12 @@ RUN dnf download glib2-doc gdk-pixbuf2-devel*x86_64* gtk3-devel-docs
 RUN rpm -i --reinstall *.rpm
 RUN rm -f *.rpm
 
+# Build and install gst-indent-1.0
+RUN git clone https://gitlab.freedesktop.org/gstreamer/gst-indent.git && \
+    meson setup --prefix=/usr indent-build gst-indent && \
+    meson install -C indent-build && \
+    rm -fr indent-build gst-indent
+
 # Install Rust
 ENV RUSTUP_VERSION=1.27.0
 ENV RUST_VERSION=1.76.0
