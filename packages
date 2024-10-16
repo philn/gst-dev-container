@@ -90,7 +90,6 @@ mesa-libd3d
 mesa-libd3d-devel
 mesa-libgbm
 mesa-libgbm-devel
-mesa-omx-drivers
 mesa-vulkan-drivers
 mold
 mono-devel
