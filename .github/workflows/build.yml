@@ -3,6 +3,8 @@ on:
   push:
     branches: [ main ]
     paths-ignore: [ README.md, justfile]
+  pull_request:
+    branches: [ main ]
 defaults:
   run:
     shell: bash
