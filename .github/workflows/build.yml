@@ -1,0 +1,31 @@
+name: build
+on:
+  push:
+    branches: [ f40 ]
+    paths-ignore: [ README.md, justfile]
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions: write-all
+    steps:
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update && sudo apt-get -y install fuse-overlayfs podman
+
+      - name: Install Just
+        uses: extractions/setup-just@v2
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: |
+          just build
+
+      - name: Deploy image
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | podman login ghcr.io --username=${GITHUB_REPOSITORY_OWNER} --password-stdin
+          just push ghcr.io/${GITHUB_REPOSITORY_OWNER}

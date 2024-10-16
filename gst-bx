@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import argparse
+import subprocess
+
+CONTAINER_PATH="localhost"
+IMAGE_NAME="gst-dev-f"
+CONTAINER_VERSION=40
+
+def run(*args, capture_output=True):
+    cmdline = args
+    print("Running %s" % " ".join(cmdline))
+    proc = subprocess.run(cmdline, capture_output=capture_output, text=True)
+    if proc.returncode != 0:
+        raise Exception(proc.returncode)
+    if capture_output:
+        return proc.stdout.strip()
+
+def update(namespace):
+    try:
+        run('podman', 'stop', namespace.name)
+    except:
+        pass
+    run('toolbox', 'rm', namespace.name)
+    run('toolbox', 'create', '-y', '-c', namespace.name, '--image', f'{namespace.image}/gst-dev:f{namespace.version}', capture_output=False)
+
+def main(args):
+    parser = argparse.ArgumentParser(prog="gst-bx", add_help=True)
+    general = parser.add_argument_group("General")
+    general.add_argument("-n", "--name", dest="name", default=f"{IMAGE_NAME}{CONTAINER_VERSION}",
+                         help=f"Toolbox name (default: {IMAGE_NAME}{CONTAINER_VERSION})")
+    general.add_argument("-v", "--version", dest="version", default=CONTAINER_VERSION,
+                         help=f"Container version (default: {CONTAINER_VERSION})")
+    general.add_argument("-i", "--image", dest="image", default=CONTAINER_PATH,
+                         help=f"Container image path (default: {CONTAINER_PATH})")
+    general.add_argument("-u", "--update", dest="update", action="store_true", help="Update the thing")
+
+    namespace = parser.parse_args(args=args)
+
+    if namespace.update:
+        update(namespace)
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
