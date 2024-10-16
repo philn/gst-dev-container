@@ -1,7 +1,7 @@
 name: build
 on:
   push:
-    branches: [ f40 ]
+    branches: [ main ]
     paths-ignore: [ README.md, justfile]
 defaults:
   run:
