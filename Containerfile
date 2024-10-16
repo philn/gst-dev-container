@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora-toolbox:40
+FROM registry.fedoraproject.org/fedora-toolbox:41
 
-ENV NAME=gst-dev VERSION=40
+ENV NAME=gst-dev VERSION=41
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
@@ -31,7 +31,7 @@ RUN dnf -y remove mesa-va-drivers
 RUN dnf -y install mesa-va-drivers-freeworld
 
 # Install the dependencies of gstreamer
-RUN dnf builddep -y --allowerasing --skip-broken gstreamer1 \
+RUN dnf builddep -y --allowerasing gstreamer1 \
     gstreamer1-plugins-base \
     gstreamer1-plugins-good \
     gstreamer1-plugins-good-extras \
@@ -40,7 +40,6 @@ RUN dnf builddep -y --allowerasing --skip-broken gstreamer1 \
     gstreamer1-plugins-bad-free \
     gstreamer1-plugins-bad-free-extras \
     gstreamer1-plugins-bad-freeworld \
-    gstreamer1-libav \
     gstreamer1-rtsp-server
 
 
@@ -66,8 +65,8 @@ RUN git clone https://gitlab.freedesktop.org/gstreamer/gst-indent.git && \
     rm -fr indent-build gst-indent
 
 # Install Rust
-ENV RUSTUP_VERSION=1.27.0
-ENV RUST_VERSION=1.76.0
+ENV RUSTUP_VERSION=1.27.1
+ENV RUST_VERSION=1.81.0
 ENV RUST_ARCH="x86_64-unknown-linux-gnu"
 ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST_ARCH/rustup-init
 RUN wget $RUSTUP_URL
@@ -75,7 +74,6 @@ RUN wget $RUSTUP_URL
 RUN chmod +x rustup-init
 RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION
 RUN rm rustup-init
-RUN chmod -R a+w $RUSTUP_HOME $CARGO_HOME
 
 RUN rustup --version
 RUN cargo --version
