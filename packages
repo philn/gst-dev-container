@@ -1,6 +1,3 @@
-SDL2
-SDL2-devel
-aalib-devel
 aom
 apitrace
 apitrace-gui
@@ -20,10 +17,6 @@ ffmpeg-free
 fish
 flatpak
 flex
-flite
-flite-devel
-gcc
-gcc-c++
 gdb
 git-lfs
 glslc
@@ -56,11 +49,8 @@ libaom
 libaom-devel
 libasan
 libavcodec-freeworld
-libcaca-devel
 libdav1d
 libdav1d-devel
-libnice
-libnice-devel
 libsodium-devel
 libunwind
 libunwind-devel
@@ -72,7 +62,6 @@ libxslt-devel
 libyaml-devel
 lld
 llvm-devel
-log4c-devel
 make
 massif-visualizer
 mesa-dri-drivers
@@ -92,16 +81,11 @@ mesa-libgbm
 mesa-libgbm-devel
 mesa-vulkan-drivers
 mold
-mono-devel
 nasm
 neon
 neon-devel
 npm
 nunit
-opencv
-opencv-devel
-openjpeg2
-openjpeg2-devel
 patch
 perf
 pipewire-devel
@@ -122,8 +106,6 @@ qt5-qtwayland-devel
 qt5-qtx11extras-devel
 redhat-rpm-config
 rr
-sbc
-sbc-devel
 strace
 sysprof
 valgrind
