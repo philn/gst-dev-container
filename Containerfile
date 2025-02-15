@@ -46,6 +46,7 @@ RUN dnf builddep -y --allowerasing gstreamer1 \
 RUN dnf remove -y meson
 RUN pip3 install meson
 RUN pip3 install gst-indent
+RUN pip3 install pre-commit
 
 # Remove gst-devel packages installed by builddep above
 RUN dnf remove -y "gstreamer1*devel"
