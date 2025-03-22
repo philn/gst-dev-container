@@ -7,7 +7,7 @@ import subprocess
 
 CONTAINER_PATH="localhost"
 IMAGE_NAME="gst-dev-f"
-CONTAINER_VERSION=41
+CONTAINER_VERSION=42
 
 def run(*args, capture_output=True):
     cmdline = args
