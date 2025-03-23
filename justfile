@@ -5,7 +5,7 @@ default_archive := "gst-dev-container.tar"
 
 build:
   podman pull registry.fedoraproject.org/fedora-toolbox:42
-  podman build -t {{tag}} .
+  podman build -t {{tag}} --security-opt seccomp=unconfined .
 
 push registry=default_registry:
   podman push {{tag}} {{registry}}/{{tag}}
