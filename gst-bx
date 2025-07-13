@@ -23,8 +23,8 @@ def update(namespace):
         run('podman', 'stop', namespace.name)
     except:
         pass
-    run('toolbox', 'rm', namespace.name)
-    run('toolbox', 'create', '-y', '-c', namespace.name, '--image', f'{namespace.image}/gst-dev:f{namespace.version}', capture_output=False)
+    run('distrobox', 'rm', '-f', namespace.name)
+    run('distrobox', 'create', '-Y', '-n', namespace.name, '--image', f'{namespace.image}/gst-dev:f{namespace.version}', capture_output=False)
 
 def main(args):
     parser = argparse.ArgumentParser(prog="gst-bx", add_help=True)
