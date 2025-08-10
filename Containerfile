@@ -61,8 +61,8 @@ RUN rpm -i --reinstall *.rpm
 RUN rm -f *.rpm
 
 # Install Rust
-ARG RUSTUP_VERSION=1.28.1
-ARG RUST_VERSION=1.86.0
+ARG RUSTUP_VERSION=1.28.2
+ARG RUST_VERSION=1.89.0
 ENV RUST_ARCH="x86_64-unknown-linux-gnu"
 ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST_ARCH/rustup-init
 RUN wget $RUSTUP_URL
