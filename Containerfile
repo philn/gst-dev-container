@@ -68,7 +68,7 @@ ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST
 RUN wget $RUSTUP_URL
 
 RUN chmod +x rustup-init
-RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION
+RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --component rust-src
 RUN rm rustup-init
 
 RUN rustup --version
