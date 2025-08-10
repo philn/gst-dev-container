@@ -75,5 +75,9 @@ RUN rustup --version
 RUN cargo --version
 RUN rustc --version
 
+ARG RUST_ANALYZER_VERSION=2025-08-04
+RUN curl -L https://github.com/rust-lang/rust-analyzer/releases/download/$RUST_ANALYZER_VERSION/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > /usr/local/bin/rust-analyzer && \
+    chmod +x /usr/local/bin/rust-analyzer
+
 RUN dnf clean all
 RUN rm -rf /var/cache/dnf /var/log/dnf*
