@@ -79,5 +79,9 @@ ARG RUST_ANALYZER_VERSION=2025-08-04
 RUN curl -L https://github.com/rust-lang/rust-analyzer/releases/download/$RUST_ANALYZER_VERSION/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > /usr/local/bin/rust-analyzer && \
     chmod +x /usr/local/bin/rust-analyzer
 
+RUN rm -fr /usr/local/cargo/registry/ && \
+    mkdir -p /usr/local/cargo/registry/ && \
+    chmod -R a+w /usr/local/cargo/registry/
+
 RUN dnf clean all
 RUN rm -rf /var/cache/dnf /var/log/dnf*
