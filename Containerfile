@@ -79,6 +79,15 @@ ARG RUST_ANALYZER_VERSION=2025-08-04
 RUN curl -L https://github.com/rust-lang/rust-analyzer/releases/download/$RUST_ANALYZER_VERSION/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > /usr/local/bin/rust-analyzer && \
     chmod +x /usr/local/bin/rust-analyzer
 
+RUN cargo install cargo-c
+
+RUN git clone --revision=be38022e37f446f951233b4e81c3e556aaa47897 https://github.com/ystreet/librice.git && \
+    pushd librice && \
+    cargo cinstall -p rice-proto --release --prefix=/usr --libdir=/usr/lib64 --library-type=cdylib && \
+    cargo cinstall -p rice-io --release --prefix=/usr --libdir=/usr/lib64 --library-type=cdylib && \
+    popd && \
+    rm -fr librice
+
 RUN rm -fr /usr/local/cargo/registry/ && \
     mkdir -p /usr/local/cargo/registry/ && \
     chmod -R a+w /usr/local/cargo/registry/
