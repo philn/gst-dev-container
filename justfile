@@ -1,10 +1,10 @@
 
-tag := "gst-dev:f42"
+tag := "gst-dev:f43"
 default_registry := "ghcr.io/philn"
 default_archive := "gst-dev-container.tar"
 
 build:
-  podman pull registry.fedoraproject.org/fedora-toolbox:42
+  podman pull registry.fedoraproject.org/fedora-toolbox:43
   podman build  --squash-all -t {{tag}} --security-opt seccomp=unconfined .
 
 push registry=default_registry:
