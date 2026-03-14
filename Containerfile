@@ -27,6 +27,7 @@ COPY packages /
 RUN dnf -y install $(cat packages | xargs)
 
 RUN dnf -y swap ffmpeg-free ffmpeg --allowerasing
+RUN dnf -y install ffmpeg-devel
 
 # VAAPI mess:
 RUN dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
