@@ -26,9 +26,10 @@ RUN dnf copr enable -y philn/wpewebkit
 COPY packages /
 RUN dnf -y install $(cat packages | xargs)
 
+RUN dnf -y swap ffmpeg-free ffmpeg --allowerasing
+
 # VAAPI mess:
-RUN dnf -y remove mesa-va-drivers
-RUN dnf -y install mesa-va-drivers-freeworld
+RUN dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
 
 # Install the dependencies of gstreamer
 RUN dnf builddep -y --allowerasing gstreamer1 \

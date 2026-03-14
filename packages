@@ -12,7 +12,6 @@ direnv
 elfutils
 elfutils-devel
 faac-devel
-ffmpeg-free
 fish
 flatpak
 flex
@@ -47,7 +46,6 @@ libadwaita-devel
 libaom
 libaom-devel
 libasan
-libavcodec-freeworld
 libdav1d
 libdav1d-devel
 libsodium-devel
@@ -87,12 +85,6 @@ python3-cairo-devel
 python3-devel
 python3-gobject
 python3-wheel
-qt5-qtbase-devel
-qt5-qtbase-private-devel
-qt5-qtquickcontrols
-qt5-qtquickcontrols2
-qt5-qtwayland-devel
-qt5-qtx11extras-devel
 redhat-rpm-config
 rr
 strace
