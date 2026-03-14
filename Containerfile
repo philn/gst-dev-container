@@ -1,6 +1,6 @@
-FROM registry.fedoraproject.org/fedora-toolbox:43
+FROM registry.fedoraproject.org/fedora-toolbox:44
 
-ENV NAME=gst-dev VERSION=43
+ENV NAME=gst-dev VERSION=44
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
