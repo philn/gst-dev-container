@@ -26,9 +26,6 @@ RUN dnf copr enable -y philn/wpewebkit
 COPY packages /
 RUN dnf -y install $(cat packages | xargs)
 
-RUN dnf -y swap ffmpeg-free ffmpeg --allowerasing
-RUN dnf -y install ffmpeg-devel
-
 # Install the dependencies of gstreamer
 RUN dnf builddep -y --allowerasing gstreamer1 \
     gstreamer1-plugins-base \

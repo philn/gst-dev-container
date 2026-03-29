@@ -12,6 +12,8 @@ direnv
 elfutils
 elfutils-devel
 faac-devel
+ffmpeg-free
+ffmpeg-devel
 fish
 flatpak
 flex
@@ -54,6 +56,7 @@ libunwind-devel
 libva-devel
 libva-intel-driver
 libva-utils
+libvpx-devel
 libxml2-devel
 libxslt-devel
 libyaml-devel
@@ -61,7 +64,6 @@ lld
 llvm-devel
 make
 massif-visualizer
-mesa-dri-drivers
 mesa-libGL
 mesa-libGL-devel
 mesa-libGLES
