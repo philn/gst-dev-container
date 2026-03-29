@@ -61,6 +61,7 @@ lld
 llvm-devel
 make
 massif-visualizer
+mesa-dri-drivers
 mesa-libGL
 mesa-libGL-devel
 mesa-libGLES

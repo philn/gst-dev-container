@@ -29,9 +29,6 @@ RUN dnf -y install $(cat packages | xargs)
 RUN dnf -y swap ffmpeg-free ffmpeg --allowerasing
 RUN dnf -y install ffmpeg-devel
 
-# VAAPI mess:
-RUN dnf -y swap mesa-va-drivers mesa-va-drivers-freeworld
-
 # Install the dependencies of gstreamer
 RUN dnf builddep -y --allowerasing gstreamer1 \
     gstreamer1-plugins-base \
