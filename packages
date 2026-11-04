@@ -12,8 +12,6 @@ direnv
 elfutils
 elfutils-devel
 faac-devel
-ffmpeg-free
-ffmpeg-devel
 fish
 flatpak
 flex
