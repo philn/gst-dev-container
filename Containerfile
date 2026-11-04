@@ -59,7 +59,7 @@ RUN rm -f *.rpm
 
 # Install Rust
 ARG RUSTUP_VERSION=1.29.0
-ARG RUST_VERSION=1.94.0
+ARG RUST_VERSION=1.99.1
 ENV RUST_ARCH="x86_64-unknown-linux-gnu"
 ENV RUSTUP_URL=https://static.rust-lang.org/rustup/archive/$RUSTUP_VERSION/$RUST_ARCH/rustup-init
 RUN wget $RUSTUP_URL
